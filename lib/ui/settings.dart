@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_share/flutter_share.dart';
 import 'package:kidslearning/ui/privacy_policy.dart';
 
-class Settings extends StatefulWidget {
-  const Settings({Key? key}) : super(key: key);
+class AppSettings extends StatefulWidget {
+  const AppSettings({Key? key}) : super(key: key);
 
   @override
-  State<Settings> createState() => _SettingsState();
+  State<AppSettings> createState() => _AppSettingsState();
 }
 
-class _SettingsState extends State<Settings> {
+class _AppSettingsState extends State<AppSettings> {
 
   final flutterWebviewPlugin = new PrivacyPolicy();
 
@@ -76,7 +76,7 @@ class _SettingsState extends State<Settings> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Image.asset("assets/images/sun.png"),
+                                Image.asset("assets/icon/icon.png", height: 100, width: 100,),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.center,

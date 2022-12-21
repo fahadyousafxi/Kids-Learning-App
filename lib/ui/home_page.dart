@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:kidslearning/ui/main%20pages/look_and_chooes.dart';
@@ -21,19 +22,23 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
 
-  String url = "https://play.google.com/store/apps/details?id=" + "com.example.kids";
+  FirebaseFirestore db = FirebaseFirestore.instance;
+
+  String url = "https://play.google.com/store/apps/details?id=" + "codeprisma.preschool.learningapp.academy.learning";
   late int index;
   AdmobHelper admobHelper =  new AdmobHelper();
+  AdmobHelper _admobHelper = Get.put(AdmobHelper());
   @override
   void initState() {
     super.initState();
     admobHelper.createInterad();
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-
     Future<bool> showExitPopup() async {
       return await showDialog(
         context: context,
@@ -66,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                   elevation: 0,
                   actions: [
                     IconButton(onPressed: (){
-                      Get.to(const Settings());
+                      Get.to(const AppSettings());
                     }, icon: Icon(Icons.settings,color: Colors.black,),),
                     IconButton(onPressed: (){
                       Get.to(PrivacyPolicy());
@@ -99,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         children: [
                           Container(
-                            height:size.height*0.3,
+                            height:size.height*0.4,
                             child:  Container(
                                 height: size.height * 0.3 - 27,
                                 decoration: const BoxDecoration(
@@ -111,7 +116,8 @@ class _HomePageState extends State<HomePage> {
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Image.asset("assets/images/sun.png"),
+                                      // SizedBox(height:size.height*0.4,),
+                                      Image.asset("assets/icon/icon.png", height: 100, width: 100,),
                                       Row(
                                         mainAxisAlignment: MainAxisAlignment.center,
                                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -155,7 +161,16 @@ class _HomePageState extends State<HomePage> {
                                         InkWell(
 
 
-                                          onTap: (){
+                                          onTap: () async {
+                                            print('*************************************');
+                                            addMyData();
+                                            // await db.collection("users").get().then((event) {
+                                            //   for (var doc in event.docs) {
+                                            //     print("${doc.id} => ${doc.data()}");
+                                            //   }
+                                            // });
+                                            print('*************************************');
+
                                             admobHelper.showInterad();
                                             Navigator.push(context,MaterialPageRoute(builder: (context)=>StartLearning()));
                                           },
@@ -178,6 +193,11 @@ class _HomePageState extends State<HomePage> {
                                         ),
                                         InkWell(
                                           onTap: (){
+                                            print('************************************************************************************************************************************************************************************************************************************************************');
+                                            addMyData();
+
+                                            print('************************************************************************************************************************************************************************************************************************************************************');
+
                                             admobHelper.showInterad();
                                             Navigator.push(context,MaterialPageRoute(builder: (context)=>VideoLearning()));
                                           },
@@ -263,5 +283,25 @@ class _HomePageState extends State<HomePage> {
           ]
       ),
     );
+  }
+  readMyData() async {
+    await db.collection("users").get().then((event) {
+      for (var doc in event.docs) {
+        print("${doc.id} => ${doc.data()}");
+      }
+    });
+  }
+
+  addMyData() async {
+    // Create a new user with a first and last name
+    final user = <String, dynamic>{
+      "first": "Fahad",
+      "last": "Khan You",
+      "born": 2000
+    };
+
+// Add a new document with a generated ID
+    db.collection("users").add(user).then((DocumentReference doc) =>
+        print('DocumentSnapshot added with ID: ${doc.id}'));
   }
 }

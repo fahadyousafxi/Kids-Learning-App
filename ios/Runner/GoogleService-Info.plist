@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>540726896983-lefekv442ce4emo14vm2r17vqfmd49b8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.540726896983-lefekv442ce4emo14vm2r17vqfmd49b8</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAzlIM1Id8wrJdTVcwhWXURcIc9bB9mVns</string>
+	<key>GCM_SENDER_ID</key>
+	<string>540726896983</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>codeprisma.preschool.learningapp.academy.kidslearning</string>
+	<key>PROJECT_ID</key>
+	<string>kpit-testing</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kpit-testing.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:540726896983:ios:db8d8c2869af2e0867f612</string>
+</dict>
+</plist>

@@ -21,9 +21,9 @@ List<Numbermodel> kidslist = KidsList1();
 
 class _LearningAlphabetState extends State<LearningAlphabet> {
 
-
 @override
 Widget build(BuildContext context) {
+
   return Scaffold(
     appBar: AppBar(
       centerTitle: true,
