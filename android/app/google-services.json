@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "185679160868",
+    "project_id": "kids-lerning-app",
+    "storage_bucket": "kids-lerning-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185679160868:android:a02759e03c31e262a5dab1",
+        "android_client_info": {
+          "package_name": "codeprisma.preschool.learningapp.academy.learning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "185679160868-8pgsuqtl89ueg5d82dtj8d7ec1cqgb94.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuZALk1FtQQhiqa-Kh2hxZ_L9JCN0ayrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "185679160868-8pgsuqtl89ueg5d82dtj8d7ec1cqgb94.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

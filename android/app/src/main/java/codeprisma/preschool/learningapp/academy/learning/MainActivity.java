@@ -1,4 +1,4 @@
-package codeprisma.preschool.learningapp.academy.kidslearning;
+package codeprisma.preschool.learningapp.academy.learning;
 
 import io.flutter.embedding.android.FlutterActivity;
 
