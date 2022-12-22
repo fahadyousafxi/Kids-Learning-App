@@ -182,9 +182,17 @@ class _LetsStartLearningState extends State<StartLearning> {
       bottomNavigationBar: Container(
         height: MediaQuery.of(context).size.width * 0.13,
         width: 25,
-        child: AdWidget(
-          ad: AdmobHelper.getBannerAd()..load(),
-        ),
+        child: FutureBuilder(
+          future: AdmobHelper().getBannerAdId(),
+          builder: (context, snapshot) {
+            if(snapshot.hasData){
+              return AdWidget(
+                ad: AdmobHelper().getBannerAd()..load(),
+              );
+            }
+            return Container();
+          },
+        )
       ),
     );
   }

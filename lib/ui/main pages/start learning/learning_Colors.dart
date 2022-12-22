@@ -99,7 +99,7 @@ List<Numbermodel> colorlist = COLOR1();
         height: MediaQuery.of(context).size.width *0.13,
         width: 25,
         child: AdWidget(
-          ad:AdmobHelper.getBannerAd()..load(),
+          ad:AdmobHelper().getBannerAd()..load(),
         ),
       ),
     );

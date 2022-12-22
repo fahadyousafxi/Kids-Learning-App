@@ -115,7 +115,7 @@ class _AlphabetsVideosState extends State<AlphabetsVideos> {
         height: MediaQuery.of(context).size.width *0.13,
         width: 25,
         child: AdWidget(
-          ad:AdmobHelper.getBannerAd()..load(),
+          ad:AdmobHelper().getBannerAd()..load(),
         ),
       ),
     );
