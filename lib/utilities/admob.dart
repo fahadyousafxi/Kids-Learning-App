@@ -27,7 +27,7 @@ class AdmobHelper extends  GetxController{
 
     BannerAd bAd = new BannerAd(
         size: AdSize.banner,
-        adUnitId: android_Google_banner,
+        adUnitId: AdHelper.bannerAdUnitId,
         listener: BannerAdListener(onAdClosed: (Ad ad) {
           print("Ad Closed");
         }, onAdFailedToLoad: (Ad ad, LoadAdError error) {

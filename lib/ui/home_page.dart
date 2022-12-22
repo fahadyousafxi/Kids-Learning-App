@@ -2,6 +2,8 @@ import 'dart:ui';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:kidslearning/ui/PrivacyPolicyScreen.dart';
+import 'package:kidslearning/ui/TermsAndConditions.dart';
 import 'package:kidslearning/ui/main%20pages/look_and_chooes.dart';
 import 'package:kidslearning/ui/main%20pages/start_learning.dart';
 import 'package:kidslearning/ui/main%20pages/video_learning.dart';
@@ -26,13 +28,16 @@ class _HomePageState extends State<HomePage> {
 
   String url = "https://play.google.com/store/apps/details?id=" + "codeprisma.preschool.learningapp.academy.learning";
   late int index;
-  AdmobHelper admobHelper =  new AdmobHelper();
-  AdmobHelper _admobHelper = Get.put(AdmobHelper());
+  AdmobHelper admobHelper =  AdmobHelper();
+
+
   @override
   void initState() {
     super.initState();
     admobHelper.createInterad();
+
   }
+
 
 
 
@@ -74,8 +79,10 @@ class _HomePageState extends State<HomePage> {
                       Get.to(const AppSettings());
                     }, icon: Icon(Icons.settings,color: Colors.black,),),
                     IconButton(onPressed: (){
-                      Get.to(PrivacyPolicy());
+                      Get.to(PrivacyPolicyScreen());
                     }, icon: Icon(Icons.policy_outlined,color: Colors.black),),
+                    IconButton(onPressed: (){Get.to(TermsAndConditions());
+                    }, icon: Icon(Icons.sticky_note_2_outlined))
                   ],
 
                 ),
@@ -162,14 +169,7 @@ class _HomePageState extends State<HomePage> {
 
 
                                           onTap: () async {
-                                            print('*************************************');
-                                            addMyData();
-                                            // await db.collection("users").get().then((event) {
-                                            //   for (var doc in event.docs) {
-                                            //     print("${doc.id} => ${doc.data()}");
-                                            //   }
-                                            // });
-                                            print('*************************************');
+
 
                                             admobHelper.showInterad();
                                             Navigator.push(context,MaterialPageRoute(builder: (context)=>StartLearning()));
